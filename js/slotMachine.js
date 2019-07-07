@@ -5,15 +5,16 @@ var BAR = 10;
 var SEVEN = 25;
 var slotMachine = ["img/cherry.png", "img/bar.png", "img/seven.png"];
 
-
 //LISTENERS
 window.onload = startGame();
 
 // FUNCTIONS
-
 // Initializes the game variables
 function initGame() {
     playerScore = 1000;
+    $("#pullBtn").prop("disabled", false);
+    $("#playerInfo").show();
+    $("#loseBox").hide();
 }
 
 // Event Handler for the pull button
@@ -24,17 +25,19 @@ $('#pullBtn').click(function(){
 
     bet = $("#userBet").val();
 
+    // validate user input
     if (isNaN(bet)) {
         alert("Must input a number");
     } else if (bet == "") {
         alert("Must input a number");
+    } else if (bet > playerScore) {
+        alert("You do not have that much to bet!!");
     } else {
 
         // randomly change the image for each slot machine section
         for (var i = 0; i < 3; i++) {
             randomIndex = Math.floor(Math.random() * slotMachine.length);
             slotName = "#slot" + String(i + 1);
-            //alert(slotName + " " + slotMachine[randomIndex]);
 
             //https://stackoverflow.com/questions/554273/changing-the-image-source-using-jquery
             $(slotName).attr("src", slotMachine[randomIndex]);
@@ -45,7 +48,7 @@ $('#pullBtn').click(function(){
 
 // Event Handler for the reset button
 $('#resetBtn').click(function(){
-    playerScore = 1000;
+    initGame();
     updateScore();
 })
 
@@ -74,7 +77,14 @@ function computeWinnings(playerBet) {
 // Updates the player's score
 function updateScore() {
     $("#playerInfo").empty();
-    $("#playerInfo").append("<p>Your Current Score: " + playerScore + "</p>");
+
+    if (playerScore > 0) {
+        $("#playerInfo").append("<p>Your Current Score: " + playerScore + "</p>");
+    } else {
+        $("#pullBtn").prop("disabled", true);
+        $("#playerInfo").hide();
+        $("#loseBox").show();
+    }
 }
 
 // Begins the game of slot machine

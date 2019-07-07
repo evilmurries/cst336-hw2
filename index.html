@@ -7,15 +7,15 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Slot Machine</title>
 </head>
 <body>
     <div class="container text-center">
         <header>
-            <h1>Slot Machine!</h1>
-            <h4>Written in Javascript</h4>
+            <h1><i class='fas fa-dollar-sign'></i> Slot Machine! <i class='fas fa-dollar-sign'></i></h1>
+            <h4>Written in Java<i class='fas fa-dollar-sign'></i>cript</h4>
         </header>
         <br />
         <div id="bettingBox">
@@ -27,6 +27,7 @@
         </div>
         <div id="buttonBox">
             <button id="pullBtn" class="btn">Pull!</button>
+            <div class="divider"></div>
             <button id="resetBtn" class="btn">Reset</button>
         </div>
         <div id="slotMachine">
@@ -36,14 +37,19 @@
             <img id="slot3" src="img/cherry.png">
             <br />
         </div>
+        <br />
         <div id="playerInfo">
         </div>
+        <div id="loseBox">
+            You lost! Hit reset and try again!
+        </div>
+        <br />
         <div id="rulesBox">
             Place a bet in the text box, and click the pull button. If you get 
             three matching images then you win! Press the reset key to start over.
             Cherries multiply your bet by 5, bar by 10, and sevens by 25; however, if you
             lose then it subtracts your bet from your score. You start out with 1000 so 
-            have fun!
+            have fun, but if you drop to zero then you lose!
         </div>
         <footer>
                 <img src="img/csumb_logo_blue.png" alt="CSUMB Logo Image"><br />
