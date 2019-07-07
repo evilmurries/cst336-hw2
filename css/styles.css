@@ -28,6 +28,10 @@ footer {
     padding-bottom: 20px;
 }
 
+#bettingBox {
+    font-size: 2.0em;
+}
+
 #rulesBox {
     color: black;
     font-size: 1em;
@@ -53,4 +57,5 @@ img {
 #playerInfo {
     background-color: silver;
     font-size: 2.0em;
+    border: solid thin black;
 }

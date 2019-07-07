@@ -13,35 +13,61 @@ window.onload = startGame();
 
 // Initializes the game variables
 function initGame() {
-    playerScore = 0;
+    playerScore = 1000;
 }
 
 // Event Handler for the pull button
 $('#pullBtn').click(function(){
     var randomIndex;
     var slotName;
-    
-    // randomly change the image for each slot machine section
-    for (var i = 0; i < 3; i++) {
-        randomIndex = Math.floor(Math.random() * slotMachine.length);
-        slotName = "#slot" + String(i + 1);
-        //alert(slotName + " " + slotMachine[randomIndex]);
+    var bet;
 
-        //https://stackoverflow.com/questions/554273/changing-the-image-source-using-jquery
-        $(slotName).attr("src", slotMachine[randomIndex]);
+    bet = $("#userBet").val();
+
+    if (isNaN(bet)) {
+        alert("Must input a number");
+    } else if (bet == "") {
+        alert("Must input a number");
+    } else {
+
+        // randomly change the image for each slot machine section
+        for (var i = 0; i < 3; i++) {
+            randomIndex = Math.floor(Math.random() * slotMachine.length);
+            slotName = "#slot" + String(i + 1);
+            //alert(slotName + " " + slotMachine[randomIndex]);
+
+            //https://stackoverflow.com/questions/554273/changing-the-image-source-using-jquery
+            $(slotName).attr("src", slotMachine[randomIndex]);
+        }
+        computeWinnings(bet);
     }
-    computeWinnings();
 })
 
 // Event Handler for the reset button
 $('#resetBtn').click(function(){
-    playerScore = 0;
+    playerScore = 1000;
     updateScore();
 })
 
 // Determines how much, if any, the player wins
-function computeWinnings() {
+function computeWinnings(playerBet) {
+    var firstSlot = $("#slot1").attr("src");
+    var secondSlot = $("#slot2").attr("src");
+    var thirdSlot = $("#slot3").attr("src");
 
+    if (firstSlot == secondSlot && firstSlot == thirdSlot) {
+        if (firstSlot == slotMachine[0]) {
+            playerScore += (playerBet * CHERRY);
+        } else if (firstSlot == slotMachine[1]) {
+            playerScore += (playerBet * BAR);
+        } else {
+            playerScore += (playerBet * SEVEN);
+        }
+    } else {
+        playerScore -= playerBet;
+    }
+
+    updateScore();
 }
 
 

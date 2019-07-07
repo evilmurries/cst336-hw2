@@ -17,6 +17,14 @@
             <h1>Slot Machine!</h1>
             <h4>Written in Javascript</h4>
         </header>
+        <br />
+        <div id="bettingBox">
+            <form>
+                Place Your Bet: <input id="userBet" type="text" placeholder="0">
+            </form>
+        </div>
+        <div id="errorBox">
+        </div>
         <div id="buttonBox">
             <button id="pullBtn" class="btn">Pull!</button>
             <button id="resetBtn" class="btn">Reset</button>
@@ -33,6 +41,9 @@
         <div id="rulesBox">
             Place a bet in the text box, and click the pull button. If you get 
             three matching images then you win! Press the reset key to start over.
+            Cherries multiply your bet by 5, bar by 10, and sevens by 25; however, if you
+            lose then it subtracts your bet from your score. You start out with 1000 so 
+            have fun!
         </div>
         <footer>
                 <img src="img/csumb_logo_blue.png" alt="CSUMB Logo Image"><br />
