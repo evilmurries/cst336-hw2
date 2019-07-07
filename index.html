@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link  href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Slot Machine</title>
+</head>
+<body>
+    <div class="container text-center">
+        <header>
+            <h1>Slot Machine!</h1>
+            <h4>Written in Javascript</h4>
+        </header>
+        <div id="buttonBox">
+            <button id="pullBtn" class="btn">Pull!</button>
+            <button id="resetBtn" class="btn">Reset</button>
+        </div>
+        <div id="slotMachine">
+            <br />
+            <img id="slot1" src="img/bar.png">
+            <img id="slot2" src="img/seven.png">
+            <img id="slot3" src="img/cherry.png">
+            <br />
+        </div>
+        <div id="playerInfo">
+        </div>
+        <div id="rulesBox">
+            Place a bet in the text box, and click the pull button. If you get 
+            three matching images then you win! Press the reset key to start over.
+        </div>
+        <footer>
+                <img src="img/csumb_logo_blue.png" alt="CSUMB Logo Image"><br />
+                CST336 Internet Programming. 2019&copy; Piwarski <br />
+                <strong>Disclaimer:</strong> The information in this webpage is used
+                for academic purposes only.
+                <br />
+            </footer>
+    </div>
+    <script src="js/slotMachine.js"></script>
+</body>
+</html>
